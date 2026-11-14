@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etsy Rescue Desk — Listing SEO Rescue, Done For You</title>
+<meta name="description" content="Your Etsy listings rewritten with real keyword research — titles, tags and descriptions delivered DONE and ready to paste. Rescue $49 · Total $99 with full shop audit included. No password, ever.">
+<link rel="stylesheet" href="assets/fonts-local.css">
+<style>
+:root{
+  --coal:#1f150e; --coal2:#2a1c11; --coal3:#38271a;
+  --orange:#f1641e; --orange-d:#c94e12;
+  --cream:#f5e9d6; --cream-dim:#d9c8ab;
+  --red:#e2483d; --ink:#17100b;
+  --paper:#f8efdd;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--coal);color:var(--cream);font-family:'Public Sans',system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3,.anton{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+
+/* ---------- hanging price tag (logo + prices) ---------- */
+.tag{display:inline-block;background:var(--orange);color:#fff;font-family:'Anton',sans-serif;text-transform:uppercase;
+  padding:.45em 1em .45em 1.5em;border-radius:6px;position:relative;transform:rotate(-3deg);
+  box-shadow:0 6px 18px rgba(0,0,0,.45);letter-spacing:.03em}
+.tag::before{content:"";position:absolute;left:.55em;top:50%;transform:translateY(-50%);width:.5em;height:.5em;border-radius:50%;background:var(--coal);box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+.tag.cream{background:var(--cream);color:var(--ink)}
+.tag.cream::before{background:var(--coal)}
+
+/* ---------- top bar ---------- */
+header{border-bottom:3px dashed rgba(245,233,214,.25);padding:16px 0;position:relative}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo .tag{font-size:1.05rem}
+.logo small{display:block;font-family:'Public Sans';font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-dim)}
+nav{display:flex;gap:22px;font-weight:600;font-size:.9rem;text-transform:uppercase;letter-spacing:.08em}
+nav a{text-decoration:none;color:var(--cream-dim)}
+nav a:hover{color:var(--orange)}
+
+/* ---------- hero ---------- */
+.hero{padding:52px 0 30px;background:
+  radial-gradient(900px 420px at 85% -10%,rgba(241,100,30,.20),transparent 60%),
+  linear-gradient(180deg,var(--coal) 0%,var(--coal2) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
+.kicker{display:inline-block;background:var(--coal3);border:1px solid rgba(245,233,214,.3);color:var(--cream);
+  font-weight:800;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;border-radius:99px;margin-bottom:18px}
+.kicker b{color:var(--orange)}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.4rem);line-height:.98;color:var(--cream)}
+.hero h1 .or{color:var(--orange)}
+.hero h1 .strike{position:relative;color:var(--cream-dim)}
+.hero h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.09em;background:var(--red);transform:rotate(-2deg);border-radius:4px}
+.hero p.lede{margin:20px 0 8px;font-size:1.13rem;color:var(--cream);max-width:34rem}
+.hero p.lede b{color:var(--orange)}
+.hero .sub{color:var(--cream-dim);font-size:.98rem;max-width:32rem}
+.hero-photo{position:relative}
+.hero-photo img{border-radius:14px;border:3px solid var(--cream);box-shadow:0 22px 50px rgba(0,0,0,.55);width:100%;height:auto}
+.hero-photo .tag{position:absolute;font-size:1.25rem}
+.hero-photo .t1{top:-16px;left:-10px}
+.hero-photo .t2{bottom:-14px;right:8px;background:var(--cream);color:var(--ink)}
+.hero-photo .t2::before{background:var(--coal)}
+.btn{display:inline-block;background:var(--orange);color:#fff;font-family:'Anton',sans-serif;text-transform:uppercase;
+  font-size:1.25rem;letter-spacing:.04em;text-decoration:none;padding:18px 34px;border-radius:10px;margin-top:26px;
+  box-shadow:0 10px 0 var(--orange-d),0 18px 34px rgba(0,0,0,.5);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(3px);box-shadow:0 7px 0 var(--orange-d),0 14px 28px rgba(0,0,0,.5)}
+.btn.small{font-size:1.05rem;padding:14px 26px}
+.btn-note{margin-top:14px;font-size:.85rem;color:var(--cream-dim)}
+.btn-note b{color:var(--cream)}
+
+/* ---------- marquee strip ---------- */
+.strip{border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);background:var(--ink);overflow:hidden;padding:10px 0;margin-top:44px}
+.strip-inner{display:flex;gap:0;white-space:nowrap;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1rem;letter-spacing:.06em;color:var(--cream)}
+.strip-inner span{padding:0 18px}
+.strip-inner .o{color:var(--orange)}
+
+/* ---------- sections ---------- */
+section{padding:64px 0}
+.sec-head{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+.sec-head h2{font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1;color:var(--cream)}
+.sec-head h2 .or{color:var(--orange)}
+.sec-sub{color:var(--cream-dim);max-width:44rem;margin-bottom:30px}
+.file-tab{display:inline-block;background:var(--orange);color:#fff;font-weight:800;font-size:.7rem;letter-spacing:.22em;
+  text-transform:uppercase;padding:6px 12px;border-radius:6px 6px 0 0;margin-bottom:0}
+.sheet{background:var(--paper);color:var(--ink);border-radius:0 14px 14px 14px;padding:30px;box-shadow:0 24px 50px rgba(0,0,0,.5);position:relative}
+.sheet::before{content:"";position:absolute;inset:10px;border:1.5px dashed rgba(23,16,11,.25);border-radius:8px;pointer-events:none}
+
+/* sample listing */
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;position:relative;z-index:1}
+.ba{border:2.5px solid var(--ink);border-radius:12px;overflow:hidden;background:#fff}
+.ba-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.ba.before .ba-head{background:#3a3a3a;color:#fff}
+.ba.after .ba-head{background:var(--orange);color:#fff}
+.stamp{font-family:'Anton',sans-serif;border:3px solid currentColor;border-radius:6px;padding:2px 10px;transform:rotate(-4deg);font-size:.95rem;letter-spacing:.08em}
+.ba.before .stamp{color:#ffb3ab;border-color:#ffb3ab}
+.ba.after .stamp{color:#fff;border-color:#fff;transform:rotate(3deg)}
+.ba img{width:100%;height:230px;object-fit:cover}
+.ba-body{padding:18px}
+.ba-body h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#8a7a5f;margin:14px 0 6px;font-weight:800}
+.ba-body h4:first-child{margin-top:0}
+.old-title{font-weight:600;font-size:1.05rem;color:#555;text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:3px}
+.new-title{font-weight:800;font-size:1.08rem;color:var(--ink)}
+.new-title mark{background:rgba(241,100,30,.28);padding:0 2px;border-radius:3px}
+.redpen{color:var(--red);font-weight:700}
+.tagchips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.78rem;font-weight:600;border:1.5px solid #b8a888;border-radius:99px;padding:3px 10px;background:#fdf8ec}
+.chip.dead{color:#999;border-color:#ddd;text-decoration:line-through;text-decoration-color:var(--red)}
+.chip.new{border-color:var(--orange);background:rgba(241,100,30,.12)}
+.desc-old{color:#777;font-style:italic}
+.desc-new{font-size:.95rem}
+.photo-order{counter-reset:po;list-style:none}
+.photo-order li{counter-increment:po;padding:5px 0 5px 34px;position:relative;font-size:.93rem}
+.photo-order li::before{content:counter(po);position:absolute;left:0;top:3px;width:24px;height:24px;border-radius:50%;
+  background:var(--orange);color:#fff;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.sheet .sec-head h2{color:var(--ink)}
+.sample-flag{position:absolute;top:-16px;right:22px;z-index:2}
+
+/* mini audit */
+.audit-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;z-index:1}
+.finding{border:2px solid var(--ink);border-radius:10px;padding:18px;background:#fff}
+.finding .no{font-family:'Anton',sans-serif;color:var(--red);font-size:1rem;letter-spacing:.06em}
+.finding h3{font-size:1.05rem;margin:4px 0 8px;color:var(--ink)}
+.finding p{font-size:.93rem;color:#444}
+.finding .fix{margin-top:10px;border-top:2px dashed #cbbd9d;padding-top:10px;font-size:.93rem}
+.finding .fix b{color:var(--orange-d);text-transform:uppercase;font-size:.72rem;letter-spacing:.16em;display:block;margin-bottom:3px}
+
+/* comparison chart */
+.chart{background:var(--coal2);border:2px solid rgba(245,233,214,.2);border-radius:14px;padding:28px;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.bar-row{display:grid;grid-template-columns:250px 1fr 130px;gap:16px;align-items:center;padding:13px 0;border-bottom:1px dashed rgba(245,233,214,.18)}
+.bar-row:last-child{border-bottom:none}
+.bar-label{font-weight:700;font-size:.95rem}
+.bar-label small{display:block;font-weight:400;color:var(--cream-dim);font-size:.8rem}
+.bar-track{background:rgba(245,233,214,.1);border-radius:8px;height:34px;position:relative}
+.bar{height:100%;border-radius:8px;background:#6e5a41}
+.bar.rival{background:repeating-linear-gradient(45deg,#7a6a52,#7a6a52 10px,#6e5c40 10px,#6e5c40 20px)}
+.bar.floor{background:#4c3d2b}
+.bar.ours{background:var(--orange);box-shadow:0 0 18px rgba(241,100,30,.45)}
+.bar-price{font-family:'Anton',sans-serif;font-size:1.3rem;text-align:right}
+.bar-price small{display:block;font-family:'Public Sans';font-size:.72rem;color:var(--cream-dim);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.bar-row.ours-row{background:rgba(241,100,30,.07);border-radius:10px;padding-left:10px;padding-right:10px}
+.chart-note{margin-top:16px;font-size:.85rem;color:var(--cream-dim)}
+
+/* packages */
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.pkg{background:var(--paper);color:var(--ink);border-radius:14px;padding:34px 30px 30px;position:relative;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.pkg::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;
+  background:var(--coal);box-shadow:inset 0 0 0 3px rgba(245,233,214,.4)}
+.pkg h3{font-size:1.5rem;color:var(--ink)}
+.pkg .price{font-family:'Anton',sans-serif;font-size:3.4rem;color:var(--orange-d);line-height:1;margin:8px 0 2px}
+.pkg .per{color:#7a6a52;font-weight:600;font-size:.9rem;margin-bottom:16px}
+.pkg ul{list-style:none;margin:0 0 8px}
+.pkg li{padding:8px 0 8px 28px;position:relative;border-bottom:1px dashed #d8c9a8;font-size:.97rem}
+.pkg li:last-child{border-bottom:none}
+.pkg li::before{content:"✓";position:absolute;left:2px;top:8px;color:var(--orange-d);font-weight:800}
+.pkg li b{color:var(--ink)}
+.pkg .btn{width:100%;text-align:center;margin-top:16px}
+.pkg.featured{outline:4px solid var(--orange)}
+.pkg .flag{position:absolute;top:16px;right:-8px;background:var(--red);color:#fff;font-family:'Anton',sans-serif;
+  text-transform:uppercase;font-size:.85rem;padding:6px 14px;transform:rotate(3deg);border-radius:4px;box-shadow:0 6px 14px rgba(0,0,0,.35)}
+.included-note{text-align:center;margin-top:20px;color:var(--cream);font-size:1.02rem}
+.included-note b{color:var(--orange)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{background:var(--coal2);border:2px solid rgba(245,233,214,.18);border-radius:12px;padding:24px}
+.step .n{font-family:'Anton',sans-serif;font-size:2.2rem;color:var(--orange);line-height:1}
+.step h3{font-size:1.15rem;margin:8px 0;color:var(--cream)}
+.step p{color:var(--cream-dim);font-size:.95rem}
+.step p b{color:var(--cream)}
+
+/* honest fence */
+.fence{border:3px solid var(--red);border-radius:14px;padding:30px;background:rgba(226,72,61,.08);position:relative}
+.fence h2{color:#ff8d84;font-size:clamp(1.6rem,3.6vw,2.3rem);margin-bottom:12px}
+.fence p{max-width:52rem;font-size:1.02rem}
+.fence p b{color:#ffb3ab}
+.fence .stamp{color:#ff8d84;border-color:#ff8d84;display:inline-block;margin-bottom:14px}
+
+footer{border-top:3px dashed rgba(245,233,214,.25);padding:34px 0 44px;color:var(--cream-dim);font-size:.9rem}
+.foot-flex{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+
+@media(max-width:900px){
+  .hero-grid,.sample-grid,.audit-list,.pkg-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .bar-row{grid-template-columns:1fr;gap:6px}
+  .bar-price{text-align:left}
+  .ba img{height:200px}
+  nav{display:none}
+  .hero-photo .t1{left:2px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <a class="logo" href="#">
+      <span class="tag">Etsy Rescue Desk</span>
+      <span><small>Listing SEO Rescue</small><small>Done-for-you · No password</small></span>
+    </a>
+    <nav>
+      <a href="#sample">Sample</a>
+      <a href="#audit">Mini-Audit</a>
+      <a href="#prices">Prices</a>
+      <a href="#packages">Packages</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Rescue file № 001 · <b>Etsy SEO</b></span>
+      <h1>Your listings aren't <span class="strike">broken</span>.<br>They're <span class="or">buried.</span></h1>
+      <p class="lede">We rewrite your titles, tags and descriptions with <b>real keyword research</b> — and we hand them back <b>finished and ready to paste</b>. Not advice. Not a report to decode. The actual fixes, done.</p>
+      <p class="sub">You send us your listing links. We never ask for your password — everything arrives in one clean document you paste in yourself.</p>
+      <a class="btn" href="#FIVERR-URL">Rescue my listings →</a>
+      <p class="btn-note">From <b>$49</b> · Delivered on Fiverr · <b>No password, ever</b></p>
+    </div>
+    <div class="hero-photo">
+      <span class="tag t1">Rescue $49</span>
+      <img src="assets/hero.jpg" alt="Etsy seller packing handmade mugs in her workshop" width="1100" height="733">
+      <span class="tag t2">Total $99 · Audit included</span>
+    </div>
+  </div>
+  <div class="strip" aria-hidden="true">
+    <div class="strip-inner">
+      <span>Fixes delivered <span class="o">done</span></span><span>✕</span>
+      <span>Not just advice</span><span>✕</span>
+      <span>Real keyword research</span><span>✕</span>
+      <span>No password — <span class="o">ever</span></span><span>✕</span>
+      <span>Audit included in Total</span><span>✕</span>
+      <span>Fixes delivered <span class="o">done</span></span><span>✕</span>
+      <span>Not just advice</span><span>✕</span>
+    </div>
+  </div>
+</div>
+
+<!-- SAMPLE BEFORE/AFTER -->
+<section id="sample">
+  <div class="wrap">
+    <span class="file-tab">Exhibit A · Sample rescue</span>
+    <div class="sheet">
+      <span class="tag sample-flag">Sample</span>
+      <div class="sec-head"><h2>One listing, <span style="color:var(--orange-d)">rescued</span></h2></div>
+      <p style="color:#5c4c33;max-width:46rem;margin-bottom:26px">This is a <b>sample</b> built for this page — a handmade mug listing the way it usually arrives, and the way it leaves the Desk. Every package is delivered in exactly this format: old version, new version, ready to paste.</p>
+
+      <div class="sample-grid">
+        <!-- BEFORE -->
+        <div class="ba before">
+          <div class="ba-head"><span>The listing as found</span><span class="stamp">Before</span></div>
+          <img src="assets/before.jpg" alt="Sample before photo: mug on a cluttered counter" width="560" height="373" loading="lazy">
+          <div class="ba-body">
+            <h4>Title</h4>
+            <p class="old-title">Mug</p>
+            <p class="redpen">✎ Red pen: one word. Etsy search can't match what isn't written.</p>
+            <h4>Tags — 3 of 13 used</h4>
+            <div class="tagchips">
+              <span class="chip">mug</span><span class="chip">cup</span><span class="chip">gift</span>
+              <span class="chip dead">10 tag slots left empty</span>
+            </div>
+            <h4>Description</h4>
+            <p class="desc-old">"Handmade mug. Dishwasher safe. Message me for colors."</p>
+            <h4>Photo order</h4>
+            <p class="desc-old">1 photo. Cluttered counter, harsh light, remote included free of charge.</p>
+          </div>
+        </div>
+
+        <!-- AFTER -->
+        <div class="ba after">
+          <div class="ba-head"><span>The listing as delivered</span><span class="stamp">After</span></div>
+          <img src="assets/after.jpg" alt="Sample after photo: styled mug with coffee on a wooden table" width="560" height="373" loading="lazy">
+          <div class="ba-body">
+            <h4>Title — keywords first</h4>
+            <p class="new-title"><mark>Handmade Speckled Ceramic Mug</mark> — Rustic Stoneware Coffee Cup, <mark>Pottery Gift for Coffee Lovers</mark>, Cozy Farmhouse Kitchen Decor</p>
+            <h4>Tags — all 13 slots working</h4>
+            <div class="tagchips">
+              <span class="chip new">handmade ceramic mug</span><span class="chip new">stoneware coffee cup</span>
+              <span class="chip new">speckled pottery mug</span><span class="chip new">rustic kitchen decor</span>
+              <span class="chip new">gift for coffee lover</span><span class="chip new">farmhouse mug</span>
+              <span class="chip new">pottery gift for her</span><span class="chip new">cozy morning mug</span>
+              <span class="chip new">artisan coffee cup</span><span class="chip new">handmade pottery gift</span>
+              <span class="chip new">speckled stoneware</span><span class="chip new">unique mug gift</span>
+              <span class="chip new">ceramic tea mug</span>
+            </div>
+            <h4>Description — sells and searches</h4>
+            <p class="desc-new">"Poured, glazed and speckled by hand in small batches, this stoneware mug holds a full 12 oz of the good stuff. The unglazed base keeps it steady on the counter; the speckled glaze makes every single one one-of-a-kind…" <span class="redpen">(full rewrite in the delivery)</span></p>
+            <h4>Suggested photo order</h4>
+            <ol class="photo-order">
+              <li>Styled hero shot — mug in use, warm light (above)</li>
+              <li>In-hand shot for scale</li>
+              <li>Close-up of the speckled glaze</li>
+              <li>All color options in one frame</li>
+              <li>Size chart graphic (12 oz, dimensions)</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI AUDIT -->
+<section id="audit" style="padding-top:0">
+  <div class="wrap">
+    <span class="file-tab">Exhibit B · Sample mini-audit</span>
+    <div class="sheet">
+      <div class="sec-head"><h2>What an audit <span style="color:var(--orange-d)">actually finds</span></h2></div>
+      <p style="color:#5c4c33;max-width:46rem;margin-bottom:26px">Sample findings from the same sample shop above — the format your Total package audit arrives in. Finding, evidence, fix. No fluff.</p>
+      <div class="audit-list">
+        <div class="finding">
+          <span class="no">Finding 01</span>
+          <h3>Title wastes the only 55 characters mobile shows</h3>
+          <p>"Mug" — plus 9 of 10 listings open with the shop name, which buyers never search for.</p>
+          <div class="fix"><b>Correction</b>Keyword phrase first, benefit second, shop name out. All 10 titles rebuilt in that order.</div>
+        </div>
+        <div class="finding">
+          <span class="no">Finding 02</span>
+          <h3>127 tag slots sitting empty across the shop</h3>
+          <p>Listings use 3–5 of their 13 tags, and the ones used are single words competing with factory sellers.</p>
+          <div class="fix"><b>Correction</b>Every slot filled with researched multi-word phrases buyers actually type.</div>
+        </div>
+        <div class="finding">
+          <span class="no">Finding 03</span>
+          <h3>First photo is losing the click</h3>
+          <p>Cluttered backgrounds and indoor yellow light on 8 of 10 listings; the product is fine — the thumbnail isn't.</p>
+          <div class="fix"><b>Correction</b>A shot-by-shot photo order per listing: hero, scale, detail, options, size chart.</div>
+        </div>
+        <div class="finding">
+          <span class="no">Finding 04</span>
+          <h3>Descriptions answer no buyer's question</h3>
+          <p>No sizes, no materials story, no shipping or care info — so buyers leave to find a listing that answers.</p>
+          <div class="fix"><b>Correction</b>Descriptions rewritten with specs, story and care up front — written to sell and to be found.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="prices" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>The price <span class="or">autopsy</span></h2></div>
+    <p class="sec-sub">What Etsy SEO help actually costs on Fiverr right now — checked against live gigs, not invented. The verified sellers do the work well. They also charge for it.</p>
+    <div class="chart">
+      <div class="bar-row">
+        <div class="bar-label">Verified Fiverr sellers<small>Setup / SEO orders, established gigs with queues</small></div>
+        <div class="bar-track"><div class="bar rival" style="width:100%"></div></div>
+        <div class="bar-price">$100–$200<small>per order</small></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Floor-price gigs<small>Cheapest listings on the platform</small></div>
+        <div class="bar-track"><div class="bar floor" style="width:6%"></div></div>
+        <div class="bar-price">$10<small>no audit · advice only</small></div>
+      </div>
+      <div class="bar-row ours-row">
+        <div class="bar-label">Etsy Rescue Desk — Rescue<small>10 listings rewritten, done &amp; ready to paste</small></div>
+        <div class="bar-track"><div class="bar ours" style="width:25%"></div></div>
+        <div class="bar-price" style="color:var(--orange)">$49<small>fixes delivered done</small></div>
+      </div>
+      <div class="bar-row ours-row">
+        <div class="bar-label">Etsy Rescue Desk — Total<small>25 listings + full shop audit + 14-day action plan</small></div>
+        <div class="bar-track"><div class="bar ours" style="width:50%"></div></div>
+        <div class="bar-price" style="color:var(--orange)">$99<small>audit included</small></div>
+      </div>
+      <p class="chart-note">The gap is the point: Total costs <b style="color:var(--cream)">less than half</b> of what verified sellers charge per order — and the full shop audit and the 14-day action plan are <b style="color:var(--cream)">included</b>, not upsold. Bars scaled to the $200 top of the verified range.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>Pick your <span class="or">rescue</span></h2></div>
+    <p class="sec-sub">Two packages. Both delivered as one clean document — you paste, you're done. Both sold through Fiverr, so your payment stays protected by the platform.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <h3>Rescue</h3>
+        <div class="price">$49</div>
+        <p class="per">one-time · via Fiverr</p>
+        <ul>
+          <li><b>10 listings rewritten</b> — title, all 13 tags, full description</li>
+          <li>Built on <b>real keyword research</b> for your niche</li>
+          <li><b>Delivered DONE</b> — ready to copy &amp; paste, old vs. new side by side</li>
+          <li>Suggested photo order for each listing</li>
+          <li>No password — you send links, we send the document</li>
+        </ul>
+        <a class="btn small" href="#FIVERR-URL">Start Rescue — $49 →</a>
+      </div>
+      <div class="pkg featured">
+        <span class="flag">Audit included</span>
+        <h3>Total</h3>
+        <div class="price">$99</div>
+        <p class="per">one-time · via Fiverr · less than half the verified-seller price</p>
+        <ul>
+          <li><b>25 listings rewritten</b> — title, all 13 tags, full description</li>
+          <li><b>Full 1-page shop audit included</b> — findings + corrections, like Exhibit B</li>
+          <li><b>14-day action plan included</b> — what to fix, in what order, day by day</li>
+          <li>Real keyword research across your whole shop</li>
+          <li>Delivered DONE and ready to paste — no password, ever</li>
+        </ul>
+        <a class="btn small" href="#FIVERR-URL">Start Total — $99 →</a>
+      </div>
+    </div>
+    <p class="included-note">Every fix arrives <b>finished</b> — not a list of suggestions. That's the whole desk.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>How the rescue <span class="or">works</span></h2></div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>You send links</h3><p>Order on Fiverr and paste the links to the listings you want rescued. <b>That's all we need — never your password.</b> Read-only shop access only if you feel like it; it's optional.</p></div>
+      <div class="step"><div class="n">02</div><h3>We research &amp; rewrite</h3><p>We research the keywords buyers actually type in your niche, then rewrite every title, tag set and description — and audit the shop if you're on Total.</p></div>
+      <div class="step"><div class="n">03</div><h3>You paste. Done.</h3><p>One clean document, old vs. new side by side. You paste each fix into Etsy yourself, so <b>your account never leaves your hands</b>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST FENCE -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="fence">
+      <span class="stamp">The honest part</span>
+      <h2>Nobody can guarantee you page 1. Nobody.</h2>
+      <p>Etsy does not guarantee rankings or sales to anyone — not to us, not to the $200 sellers, not to anyone. <b>Anyone who promises you guaranteed sales is selling you smoke.</b> What we sell is the work itself: professional optimization built on real keyword research, delivered finished and ready to paste, with an honest audit of what your shop needs next. That's a promise we can keep — so it's the one we make.</p>
+      <a class="btn" href="#FIVERR-URL">Get the honest rescue →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-flex">
+    <span class="tag" style="font-size:.9rem">Etsy Rescue Desk</span>
+    <p>Listing SEO rescue for Etsy sellers · Delivered as a document — your password stays yours · Sold via Fiverr</p>
+    <p>Sample listing and audit on this page are labeled samples, built to show the delivery format.</p>
+  </div>
+</footer>
+
+</body>
+</html>
